@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hello Dessert</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="m.css"/>
+   <style type="text/css">
+     h1{margin-top:12%;}
+
+     ol{
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       align-items:center;
+       width: 100%;
+       padding: 0;
+       margin-right: 100px;
+       text-align: center;
+     }
+
+     li{display:inline-block;}
+
+     .sel li img{
+       display:inline-block;
+       float:none;
+       width: 100%;
+     }
+
+     .sel li{
+       width: 100px;
+       transition: 0.3s;
+       cursor: pointer;
+       opacity: 0.8;
+     }
+
+     .sel li:hover{
+       width: 140px;
+       opacity: 1;
+     }
+
+    h1{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose your favorite dessert</h1>
+  <ol class="sel" onClick="clickImg(event);">
+    <div>
+      <li><img id="img1" src="doughnut.png" alt=""></li>
+      <li><img id="img2" src="gingerbread-man.png" alt=""></li>
+      <li><img id="img3" src="muffin.png" alt=""></li>
+      <li><img id="img4" src="jelly.png" alt=""></li>
+      <li><img id="img5" src="ice-cream.png" alt=""></li>
+    </div>
+  </ol>
+
+<script type="text/javascript">
+function clickImg(e) {
+    e.preventDefault();
+    if (!e) {
+    var e = window.event;
+}
+    var targ;
+    if (e.target) {
+        targ=e.target;
+    } else if (e.srcElement) {
+        targ=e.srcElement;
+    }
+    var tname;
+    tname = targ.tagName;
+    if(tname=="IMG"){
+    element = targ;
+    element.classList.remove("bounce");
+    element.offsetWidth = element.offsetWidth;
+    element.classList.add("bounce");
+    //alert("지금 클릭된 태그명은" + event.srcElement + " 입니다 ");
+    //alert("지금 클릭된 태그명은" + tname + " 입니다 ");
+  }
+  else {}
+}
+</script>
+</body>
+
+</html>
